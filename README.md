@@ -44,13 +44,15 @@ An MCP (Model Context Protocol) server for [Atomic CRM](https://marmelab.com/ato
 
 2. Enable OAuth 2.1 Server
    - Go to **Authentication** → **OAuth Server**
-   - Enable OAuth 2.1
+   - Click on **Enable the Supabase OAuth Server**
+   - Set the **Authorization Path** to `/#/oauth/consent`
+   - Enable the **Allow Dynamic OAuth Apps** option
+   - and save changes
 
 3. Configure asymmetric JWT signing
    - Go to **Project Settings** → **JWT Keys**
-   - Enable JWT Signing Keys
-   - Rotate keys if the current key uses HS256
-   - The current key should be of type "ECC (P256)" or similar, NOT "Legacy HS256 (Shared Secret)"
+   - On the **JWT Signing Keys** tab, if you see an invite to **Start using JWT signing keys**, this means you're currently using Legacy JWT secret, so click on the **Migrate JWT secret** button
+   - If the current key is of type "Legacy HS256 (Shared Secret)", click on the **Rotate keys** to use the new key of type "ECC (P256)" or similar
 
 4. Get your Supabase URL
    - Go to **Project Settings** → **Data API**
